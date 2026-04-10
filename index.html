@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Kuromi Finance</title>
+
+<link rel="stylesheet" href="style.css">
+<link rel="manifest" href="manifest.json">
+
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&display=swap" rel="stylesheet">
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+
+<body>
+
+<header>
+<h1> Stack Buddy </h1>
+<img src="kuromi.png" class="mascot">
+</header>
+
+<main>
+
+<!-- DASHBOARD -->
+<section id="dashboard" class="page">
+
+<div class="stats">
+
+<div class="stat">
+<h3>Income</h3>
+<p id="incomeDisplay">৳0</p>
+</div>
+
+<div class="stat">
+<h3>Spent</h3>
+<p id="spentDisplay">৳0</p>
+</div>
+
+<div class="stat">
+<h3>Remaining</h3>
+<p id="remainingDisplay">৳0</p>
+</div>
+
+</div>
+
+<div class="card">
+<canvas id="chart"></canvas>
+</div>
+
+<div class="card">
+<button onclick="resetMonth()">🔄 Reset Month</button>
+<button onclick="clearAll()">⚠️ Clear All Data</button>
+</div>
+
+</section>
+
+<!-- BUDGET -->
+<section id="budget" class="page">
+
+<div class="card">
+<h3>Set Income</h3>
+<input id="incomeInput" type="number" placeholder="Income">
+<button onclick="setIncome()">Save</button>
+</div>
+
+<div class="card">
+<h3>Add Budget</h3>
+<input id="categoryName" placeholder="Category">
+<input id="categoryAmount" type="number" placeholder="Amount">
+
+<div class="icon-picker" id="iconPicker">
+
+<div class="icon-item" onclick="selectIcon(this)">
+<img src="icons/home.png">
+<span>Home</span>
+</div>
+
+<div class="icon-item" onclick="selectIcon(this)">
+<img src="icons/food.png">
+<span>Food</span>
+</div>
+
+<div class="icon-item" onclick="selectIcon(this)">
+<img src="icons/shop.png">
+<span>Shopping</span>
+</div>
+
+<div class="icon-item" onclick="selectIcon(this)">
+<img src="icons/car.png">
+<span>Transport</span>
+</div>
+
+<div class="icon-item" onclick="selectIcon(this)">
+<img src="icons/game.png">
+<span>Makeup</span>
+</div>
+
+<div class="icon-item" onclick="selectIcon(this)">
+<img src="icons/miscellaneous.png">
+<span>Misc</span>
+</div>
+
+</div>
+
+<button onclick="addCategory()">Add Budget</button>
+</div>
+
+<div id="categories"></div>
+
+</section>
+
+<!-- SAVINGS -->
+<section id="savings" class="page">
+
+<div class="card">
+<h3>Add Savings Goal</h3>
+<input id="goalName" placeholder="Goal">
+<input id="goalAmount" type="number" placeholder="Amount">
+<button onclick="addGoal()">Add Goal</button>
+</div>
+
+<div id="goals"></div>
+
+</section>
+
+<!-- HISTORY -->
+<section id="history" class="page">
+
+<div class="card">
+<h3>Transactions</h3>
+<ul id="historyList"></ul>
+</div>
+
+</section>
+
+</main>
+
+<nav class="navBar">
+<button onclick="showPage('dashboard')">
+<img src="icons/page.png" class="nav-icon">
+</button>
+<button onclick="showPage('budget')">
+<img src="icons/Budget.png" class="nav-icon">    
+</button>
+<button onclick="showPage('savings')">
+<img src="icons/savings.png" class="nav-icon">
+</button>
+<button onclick="showPage('history')">
+<img src="icons/history.png" class="nav-icon">
+</button>
+</nav>
+
+<script src="script.js"></script>
+
+</body>
+</html>
